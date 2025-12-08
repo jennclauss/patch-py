@@ -1,31 +1,36 @@
 """
-Configuration constants for Patch.py quilt design application.
+Configuration constants for Patch.py quilt design app.
 
 Centralizes all magic numbers and configuration to improve maintainability
 and testability. Allows configuration to be mocked in tests.
 """
 
-# Canvas dimensions
+# Each patch is a square with this width and height in pixels
 PATCH_SIZE = 100
+
+# Canvas size in pixels
 CANVAS_WIDTH = PATCH_SIZE * 4
 CANVAS_HEIGHT = PATCH_SIZE * 4
 
-# Available quilt block designs
-AVAILABLE_QUILT_BLOCKS = [
-    "one patch",
-    "four patch",
-    "half square triangle",
-    "quarter square triangle"
-]
+# Quilt block designs included in the program with draw functions
+AVAILABLE_QUILT_BLOCKS = ["one patch", "four patch", "half square triangle", "quarter square triangle" ]
+# Stores the size of the AVAILABLE_QUILT_BLOCKS list as a variable
+QUILT_BLOCKS_LIST_SIZE = len(AVAILABLE_QUILT_BLOCKS)
 
-# Position options per block type
-BLOCK_POSITIONS = {
-    "four patch": ["upper left, lower right", "upper right, lower left"],
-    "half square triangle": ["upper left", "upper right", "lower left", "lower right"],
-    "quarter square triangle": ["horizontal", "vertical"]
-}
+# Lists provide positioning options 
+FOUR_PATCH_POSITIONS = ["upper left, lower right", "upper right, lower left"]
+# Stores the size of the FOUR_PATCH_POSITIONS list as a variable
+FOUR_PATCH_POSITIONS_LIST_SIZE = len(FOUR_PATCH_POSITIONS)
 
-# Tkinter color names (140+ supported colors)
+HALF_SQUARE_TRIANGLE_POSITIONS = ["upper left", "upper right", "lower left", "lower right"]
+# Stores the size of the HALF_SQUARE_TRIANGLE_POSITIONS list as a variable
+HALF_SQUARE_TRIANGLE_POSITIONS_LIST_SIZE = len(HALF_SQUARE_TRIANGLE_POSITIONS)
+
+QUARTER_SQUARE_TRIANGLE_POSITIONS = ["horizontal", "vertical"]
+# Stores the size of the QUARTER_SQUARE_TRIANGLE_POSITIONS list as a variable
+QUARTER_SQUARE_TRIANGLE_POSITIONS_LIST_SIZE = len(QUARTER_SQUARE_TRIANGLE_POSITIONS)
+
+# List of colors available in Tkinter library; used to validates user's color inputs
 TK_COLOR_NAMES = [
     'snow', 'ghost white', 'white smoke', 'gainsboro', 'floral white',
     'old lace', 'linen', 'antique white', 'papaya whip', 'blanched almond',
