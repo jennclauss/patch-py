@@ -1,7 +1,10 @@
 from graphics import Canvas
 from src.patch.config import (
     PATCH_SIZE, CANVAS_WIDTH, CANVAS_HEIGHT,
-    AVAILABLE_QUILT_BLOCKS, BLOCK_POSITIONS,
+    AVAILABLE_QUILT_BLOCKS, QUILT_BLOCKS_LIST_SIZE,
+    FOUR_PATCH_POSITIONS, FOUR_PATCH_POSITIONS_LIST_SIZE,
+    HALF_SQUARE_TRIANGLE_POSITIONS, HALF_SQUARE_TRIANGLE_POSITIONS_LIST_SIZE,
+    QUARTER_SQUARE_TRIANGLE_POSITIONS, QUARTER_SQUARE_TRIANGLE_POSITIONS_LIST_SIZE,
     TK_COLOR_NAMES
 )
 
@@ -250,20 +253,6 @@ def design_row(canvas, quilt_patchwork_color):
         current_row = current_row + 1
     # congratulates user on finishing their quilt design
     print("Congratulations! You just designed a beautiful quilt.")
-
-"""
-For future iterations of the program, I would like to make it so that users can choose the colors 
-for every part of their quilt — backgrounds and patchwork for each block.
-
-Eventually add a dictionary with keys for every quilt block and the corresponding design the user picked for each value.
-
-Add hex code support and validation, with and without hash, using regular expressions
-
-Additional code to allow users to add a unique background color to each block:
-    user_block_color_choice = input("What color would you like the block to be? ")
-    # first draw a square over the entire patch
-    canvas.create_rectangle(start_x, start_y, end_x, end_y, user_block_color_choice)
-"""
 
 if __name__ == '__main__':
     main()
